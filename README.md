@@ -292,7 +292,7 @@ $ python convert_dataset_to_dpr_retriever_input_file.py \
 --output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz
 ```
 
-### Convert the datasets into the format of DPR questions CSV files
+### Convert the datasets into the format of DPR questions TSV files
 
 ```sh
 $ python convert_dataset_to_dpr_qas_file.py \

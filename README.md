@@ -340,6 +340,8 @@ $ python convert_passages_to_dpr_format.py \
 
 ## License
 
+- The codes in this repository, not including the datasets themselves, are distributed under the MIT license.
+
 - `data/abc` 以下に含まれるクイズ問題の著作権は [abc/EQIDEN 実行委員会](http://abc-dive.com/questions/) に帰属します。東北大学において研究目的での再配布許諾を得ています。
 - `data/aio_jaqket` 以下に含まれるクイズ問題は [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) ライセンスの下に提供されています。これらのクイズ問題は [株式会社キュービック](http://www.qbik.co.jp/) および [クイズ法人カプリティオ](http://capriccio.tokyo/) に依頼し作成したものです。
 - 読解データセットにパッセージとして付与されている Wikipedia のコンテンツは、[Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/) ライセンスおよび [GFDL](https://www.gnu.org/copyleft/fdl.html) ライセンスの下に配布されているものです。

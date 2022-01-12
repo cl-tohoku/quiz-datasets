@@ -35,7 +35,7 @@ def main(args: argparse.Namespace):
             if args.write_jsonl:
                 print(json.dumps(output_item, ensure_ascii=False), file=fo)
             else:
-                if i > 0:
+                if n_output_questions > 0:
                     fo.write(",")
                 for line in json.dumps(output_item, ensure_ascii=False, indent=4).split("\n"):
                     fo.write("\n    " + line)

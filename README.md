@@ -93,53 +93,53 @@ Before executing the scripts, you need to build an Elasticsearch index of Wikipe
 
 **Note:** since [Elasticsearch does not always ensure consistent search results](https://www.elastic.co/guide/en/elasticsearch/reference/6.8/consistent-scoring.html), the generated datasets may slightly differ from the distribued ones if you build your own Elasticsearch indices.
 
-#### `jawiki-20211129-sentences-c400-large`
+#### `jawiki-20211129-sentences-c400-small`
 
 ```sh
-$ mkdir ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large
+$ mkdir ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small
 
 $ python make_dataset.py \
 --input_files data/abc/abc_01.txt data/abc/abc_02.txt data/abc/abc_03.txt data/abc/abc_04.txt data/abc/abc_05.txt data/abc/abc_06.txt data/abc/abc_07.txt data/abc/abc_08.txt data/abc/abc_09.txt data/abc/abc_10.txt data/abc/abc_11.txt data/abc/abc_12.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/abc_01-12.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/abc_01-12.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 10 \
+--min_inlinks 500 \
 --exclude_sexual_pages
-# Questions with at least one positive document: 15277
-# Questions with no positive document: 2458
+# Questions with at least one positive passage: 12368
+# Questions with no positive passage: 5367
 # Total output questions: 17735
 
 $ python make_dataset.py \
 --input_files data/aio_jaqket/aio_01_dev1.txt data/aio_jaqket/aio_01_dev2.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_dev.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 10 \
+--min_inlinks 500 \
 --exclude_sexual_pages
-# Questions with at least one positive document: 1882
-# Questions with no positive document: 110
+# Questions with at least one positive passage: 1509
+# Questions with no positive passage: 483
 # Total output questions: 1992
 
 $ python make_dataset.py \
 --input_files data/aio_jaqket/aio_01_test_lb.txt data/aio_jaqket/aio_01_test_lc.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_test.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_test.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 10 \
+--min_inlinks 500 \
 --exclude_sexual_pages
-# Questions with at least one positive document: 1893
-# Questions with no positive document: 107
+# Questions with at least one positive passage: 1483
+# Questions with no positive passage: 517
 # Total output questions: 2000
 
 $ python make_dataset.py \
 --input_files data/aio_jaqket/aio_01_unused.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_unused.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 10 \
+--min_inlinks 500 \
 --exclude_sexual_pages
-# Questions with at least one positive document: 544
-# Questions with no positive document: 64
+# Questions with at least one positive passage: 430
+# Questions with no positive passage: 178
 # Total output questions: 608
 ```
 
@@ -193,73 +193,73 @@ $ python make_dataset.py \
 # Total output questions: 608
 ```
 
-#### `jawiki-20211129-sentences-c400-small`
+#### `jawiki-20211129-sentences-c400-large`
 
 ```sh
-$ mkdir ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small
+$ mkdir ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large
 
 $ python make_dataset.py \
 --input_files data/abc/abc_01.txt data/abc/abc_02.txt data/abc/abc_03.txt data/abc/abc_04.txt data/abc/abc_05.txt data/abc/abc_06.txt data/abc/abc_07.txt data/abc/abc_08.txt data/abc/abc_09.txt data/abc/abc_10.txt data/abc/abc_11.txt data/abc/abc_12.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/abc_01-12.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/abc_01-12.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 500 \
+--min_inlinks 10 \
 --exclude_sexual_pages
-# Questions with at least one positive passage: 12368
-# Questions with no positive passage: 5367
+# Questions with at least one positive document: 15277
+# Questions with no positive document: 2458
 # Total output questions: 17735
 
 $ python make_dataset.py \
 --input_files data/aio_jaqket/aio_01_dev1.txt data/aio_jaqket/aio_01_dev2.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_dev.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 500 \
+--min_inlinks 10 \
 --exclude_sexual_pages
-# Questions with at least one positive passage: 1509
-# Questions with no positive passage: 483
+# Questions with at least one positive document: 1882
+# Questions with no positive document: 110
 # Total output questions: 1992
 
 $ python make_dataset.py \
 --input_files data/aio_jaqket/aio_01_test_lb.txt data/aio_jaqket/aio_01_test_lc.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_test.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_test.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 500 \
+--min_inlinks 10 \
 --exclude_sexual_pages
-# Questions with at least one positive passage: 1483
-# Questions with no positive passage: 517
+# Questions with at least one positive document: 1893
+# Questions with no positive document: 107
 # Total output questions: 2000
 
 $ python make_dataset.py \
 --input_files data/aio_jaqket/aio_01_unused.txt \
---output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz \
+--output_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_unused.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20211129-c400 \
---min_inlinks 500 \
+--min_inlinks 10 \
 --exclude_sexual_pages
-# Questions with at least one positive passage: 430
-# Questions with no positive passage: 178
+# Questions with at least one positive document: 544
+# Questions with no positive document: 64
 # Total output questions: 608
 ```
 
 ### Convert the datasets into the format of DPR Retriever input files
 
 ```sh
-# jawiki-20211129-sentences-c400-large
-$ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large
+# jawiki-20211129-sentences-c400-small
+$ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/abc_01-12.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/abc_01-12.json.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/abc_01-12.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/abc_01-12.jsonl.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_dev.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_dev.json.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_test.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_test.json.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_test.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_test.jsonl.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_unused.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_unused.json.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz
 
 # jawiki-20211129-sentences-c400-medium
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium
@@ -276,20 +276,20 @@ $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-medium/aio_01_unused.jsonl.gz \
 --output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_unused.json.gz
 
-# jawiki-20211129-sentences-c400-small
-$ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small
+# jawiki-20211129-sentences-c400-large
+$ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/abc_01-12.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/abc_01-12.jsonl.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/abc_01-12.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/abc_01-12.json.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_dev.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_dev.json.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_test.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_test.jsonl.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_test.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_test.json.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
---input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz
+--input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_unused.jsonl.gz \
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_unused.json.gz
 ```
 
 ### Convert the datasets into the format of DPR questions TSV files
@@ -311,16 +311,18 @@ $ python convert_dataset_to_dpr_qas_file.py \
 
 ### Convert the passages file into DPR passages TSV files
 
+Before executing the scripts, you need to generate Wikipedia passages files by running the codes in [singletongue/wikipedia-utils](https://github.com/singletongue/wikipedia-utils).
+
 ```sh
-# Filtered pages large (4,188,183 passages)
+# Filtered pages small (379,096 passages from 27,164 pages)
 $ python convert_passages_to_dpr_format.py \
 --passages_file ~/work/wikipedia-utils/20211129/passages-c400-jawiki-20211129.json.gz \
 --page_ids_file ~/work/wikipedia-utils/20211129/page-ids-jawiki-20211129.json \
---output_file ~/work/quiz-datasets/dpr/wikipedia_split/jawiki-20211129-c400-large.tsv.gz \
---min_inlinks 10 \
+--output_file ~/work/quiz-datasets/dpr/wikipedia_split/jawiki-20211129-c400-small.tsv.gz \
+--min_inlinks 500 \
 --exclude_sexual_pages
 
-# Filtered pages medium (1,627,879 passages)
+# Filtered pages medium (1,627,879 passages from 227,748 pages)
 $ python convert_passages_to_dpr_format.py \
 --passages_file ~/work/wikipedia-utils/20211129/passages-c400-jawiki-20211129.json.gz \
 --page_ids_file ~/work/wikipedia-utils/20211129/page-ids-jawiki-20211129.json \
@@ -328,12 +330,12 @@ $ python convert_passages_to_dpr_format.py \
 --min_inlinks 100 \
 --exclude_sexual_pages
 
-# Filtered pages small (379,096 passages)
+# Filtered pages large (4,188,183 passages from 887,346 pages)
 $ python convert_passages_to_dpr_format.py \
 --passages_file ~/work/wikipedia-utils/20211129/passages-c400-jawiki-20211129.json.gz \
 --page_ids_file ~/work/wikipedia-utils/20211129/page-ids-jawiki-20211129.json \
---output_file ~/work/quiz-datasets/dpr/wikipedia_split/jawiki-20211129-c400-small.tsv.gz \
---min_inlinks 500 \
+--output_file ~/work/quiz-datasets/dpr/wikipedia_split/jawiki-20211129-c400-large.tsv.gz \
+--min_inlinks 10 \
 --exclude_sexual_pages
 ```
 

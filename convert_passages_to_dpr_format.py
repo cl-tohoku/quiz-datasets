@@ -2,23 +2,22 @@ import argparse
 import gzip
 import json
 
-from logzero import logger
 from tqdm import tqdm
 
 
 HEADER_COLS = ["id", "text", "title"]
 
 
-def main(args):
+def main(args: argparse.Namespace):
     page_info = dict()
-    logger.info("Loading page ids file")
     with open(args.page_ids_file) as f:
         for line in tqdm(f):
             pageid_item = json.loads(line)
             pageid = pageid_item.pop("pageid")
             page_info[pageid] = pageid_item
 
-    logger.info("Processing input file")
+    titles = set()
+    n_passages = 0
     with gzip.open(args.passages_file, "rt") as f, gzip.open(args.output_file, "wt") as fo:
         print(*HEADER_COLS, sep="\t", file=fo)
         for line in tqdm(f):
@@ -44,6 +43,11 @@ def main(args):
             assert "\t" not in text
 
             print(passage_id, text, title, sep="\t", file=fo)
+            titles.add(title)
+            n_passages += 1
+
+    print("The number of output page titles:", len(titles))
+    print("The number of output passages:", n_passages)
 
 
 if __name__ == "__main__":

@@ -250,16 +250,16 @@ $ python make_dataset.py \
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/abc_01-12.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/abc_01-12.jsonl.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/abc_01-12.json.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_dev.json.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_test.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_test.jsonl.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_test.json.gz
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.json.gz
 
 # jawiki-20211129-sentences-c400-medium
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium

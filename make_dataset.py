@@ -133,7 +133,7 @@ def main(args: argparse.Namespace):
                                 num_positive_question += 1
                             else:
                                 num_negative_question += 1
-                                if args.skip_negative_question:
+                                if args.skip_no_positive:
                                     continue
 
                             output_item["passages"] = passages
@@ -146,8 +146,8 @@ def main(args: argparse.Namespace):
     if args.num_passages_per_question is not None:
         print("Questions with at least one positive passage:", num_positive_question)
         print("Questions with no positive passage:", num_negative_question)
-        if args.skip_negative_question:
-            print("    (these questions are skipped because --skip_negative_question is enabled)")
+        if args.skip_no_positive:
+            print("    (these questions are skipped because --skip_no_positive is enabled)")
 
     print("Total output questions:", num_output_question)
 
@@ -164,7 +164,7 @@ if __name__ == "__main__":
     parser.add_argument("--exclude_disambiguation_pages", action="store_true")
     parser.add_argument("--exclude_sexual_pages", action="store_true")
     parser.add_argument("--exclude_violent_pages", action="store_true")
-    parser.add_argument("--skip_negative_question", action="store_true")
+    parser.add_argument("--skip_no_positive", action="store_true")
     parser.add_argument("--match_to_title", action="store_true")
     parser.add_argument("--num_question_splits", type=int, default=1)
     parser.add_argument("--no_passage_text", action="store_true")

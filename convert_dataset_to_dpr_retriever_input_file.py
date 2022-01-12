@@ -6,6 +6,8 @@ from tqdm import tqdm
 
 
 def main(args: argparse.Namespace):
+    n_output_questions = 0
+    n_skipped_questions = 0
     with gzip.open(args.input_file, "rt") as f, gzip.open(args.output_file, "wt") as fo:
         if not args.write_jsonl:
             fo.write("[")
@@ -16,6 +18,10 @@ def main(args: argparse.Namespace):
             passages = qa_item["passages"]
             positive_passages = [passages[i] for i in qa_item["positive_passage_indices"]]
             negative_passages = [passages[i] for i in qa_item["negative_passage_indices"]]
+
+            if args.skip_no_positive and len(positive_passages) == 0:
+                n_skipped_questions += 1
+                continue
 
             output_item = {
                 "qid": qa_item["qid"],
@@ -34,8 +40,14 @@ def main(args: argparse.Namespace):
                 for line in json.dumps(output_item, ensure_ascii=False, indent=4).split("\n"):
                     fo.write("\n    " + line)
 
+            n_output_questions += 1
+
         if not args.write_jsonl:
             fo.write("\n]")
+
+    print("The number of output questions:", n_output_questions)
+    if args.skip_no_positive:
+        print("The number of skipped questions:", n_skipped_questions)
 
 
 if __name__ == "__main__":
@@ -43,5 +55,6 @@ if __name__ == "__main__":
     parser.add_argument("--input_file", type=str, required=True)
     parser.add_argument("--output_file", type=str, required=True)
     parser.add_argument("--write_jsonl", action="store_true")
+    parser.add_argument("--skip_no_positive", action="store_true")
     args = parser.parse_args()
     main(args)

@@ -250,46 +250,82 @@ $ python make_dataset.py \
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/abc_01-12.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/abc_01-12.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/abc_01-12.json.gz \
+--skip_no_positive
+# The number of output questions: 12368
+# The number of skipped questions: 5367
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_dev.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_dev.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_dev.json.gz \
+--skip_no_positive
+# The number of output questions: 1509
+# The number of skipped questions: 483
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_test.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_test.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_test.json.gz \
+--skip_no_positive
+# The number of output questions: 1483
+# The number of skipped questions: 517
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-small/aio_01_unused.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small/aio_01_unused.json.gz \
+--skip_no_positive
+# The number of output questions: 430
+# The number of skipped questions: 178
 
 # jawiki-20211129-sentences-c400-medium
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-medium/abc_01-12.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/abc_01-12.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/abc_01-12.json.gz \
+--skip_no_positive
+# The number of output questions: 14469
+# The number of skipped questions: 3266
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-medium/aio_01_dev.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_dev.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_dev.json.gz \
+--skip_no_positive
+# The number of output questions: 1777
+# The number of skipped questions: 215
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-medium/aio_01_test.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_test.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_test.json.gz \
+--skip_no_positive
+# The number of output questions: 1761
+# The number of skipped questions: 239
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-medium/aio_01_unused.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_unused.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-medium/aio_01_unused.json.gz \
+--skip_no_positive
+# The number of output questions: 509
+# The number of skipped questions: 99
 
 # jawiki-20211129-sentences-c400-large
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/abc_01-12.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/abc_01-12.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/abc_01-12.json.gz \
+--skip_no_positive
+# The number of output questions: 15277
+# The number of skipped questions: 2458
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_dev.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_dev.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_dev.json.gz \
+--skip_no_positive
+# The number of output questions: 1882
+# The number of skipped questions: 110
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_test.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_test.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_test.json.gz \
+--skip_no_positive
+# The number of output questions: 1893
+# The number of skipped questions: 107
 $ python convert_dataset_to_dpr_retriever_input_file.py \
 --input_file ~/work/quiz-datasets/datasets/jawiki-20211129-c400-large/aio_01_unused.jsonl.gz \
---output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_unused.json.gz
+--output_file ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-large/aio_01_unused.json.gz \
+--skip_no_positive
+# The number of output questions: 544
+# The number of skipped questions: 64
 ```
 
 ### Convert the datasets into the format of DPR questions TSV files

@@ -245,6 +245,8 @@ $ python make_dataset.py \
 
 ### Convert the datasets into the format of DPR Retriever input files
 
+**Note:** specifying `--skip_no_positive` removes questions with no postive passages from the output file.
+
 ```sh
 # jawiki-20211129-sentences-c400-small
 $ mkdir ~/work/quiz-datasets/dpr/retriever/jawiki-20211129-c400-small

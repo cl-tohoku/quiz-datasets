@@ -26,6 +26,7 @@ def main(args: argparse.Namespace):
             output_item = {
                 "qid": qa_item["qid"],
                 "timestamp": qa_item["timestamp"],
+                "dataset": args.dataset_label,
                 "question": qa_item["question"],
                 "answers": qa_item["answers"],
                 "positive_ctxs": positive_passages,
@@ -54,6 +55,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--input_file", type=str, required=True)
     parser.add_argument("--output_file", type=str, required=True)
+    parser.add_argument("--dataset_label", type=str)
     parser.add_argument("--write_jsonl", action="store_true")
     parser.add_argument("--skip_no_positive", action="store_true")
     args = parser.parse_args()

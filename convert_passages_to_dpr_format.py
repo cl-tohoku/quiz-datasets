@@ -1,4 +1,5 @@
 import argparse
+import csv
 import gzip
 import json
 
@@ -18,8 +19,9 @@ def main(args: argparse.Namespace):
 
     titles = set()
     n_passages = 0
-    with gzip.open(args.passages_file, "rt") as f, gzip.open(args.output_file, "wt") as fo:
-        print(*HEADER_COLS, sep="\t", file=fo)
+    with gzip.open(args.passages_file, "rt") as f, gzip.open(args.output_file, "wt", newline="") as fo:
+        tsv_writer = csv.writer(fo, delimiter="\t")
+        tsv_writer.writerow(HEADER_COLS)
         for line in tqdm(f):
             passage_item = json.loads(line)
             pageid = passage_item["pageid"]
@@ -39,10 +41,9 @@ def main(args: argparse.Namespace):
             assert "\t" not in title
 
             text = passage_item["text"]
-            text = json.dumps(text, ensure_ascii=False)
             assert "\t" not in text
 
-            print(passage_id, text, title, sep="\t", file=fo)
+            tsv_writer.writerow([passage_id, text, title])
             titles.add(title)
             n_passages += 1
 

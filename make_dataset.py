@@ -26,16 +26,13 @@ class ElasticsearchPassageRetriever():
         exclude_violent_pages: bool = False,
     ):
         query = {
-            "query": {
-                "bool": {
-                    "must": {
-                        "match": {
-                            "text": query_text
-                        },
+            "bool": {
+                "must": {
+                    "match": {
+                    "text": query_text
                     },
                 },
             },
-            "size": size
         }
         filter_settings = []
         if min_inlinks is not None:
@@ -47,9 +44,9 @@ class ElasticsearchPassageRetriever():
         if exclude_violent_pages:
             filter_settings.append({"term": {"is_violent_page": False}})
 
-        query["query"]["bool"]["filter"] = filter_settings
+        query["bool"]["filter"] = filter_settings
 
-        response = self.es.search(index=self.index, body=query)
+        response = self.es.search(index=self.index, query=query, size=size)
         passages = []
         for item in response["hits"]["hits"]:
             passage = {

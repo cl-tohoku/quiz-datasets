@@ -67,17 +67,17 @@ $ python make_dataset.py \
 # Total output questions: 17735
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_dev1.txt data/aio_jaqket/aio_01_dev2.txt \
+--input_files data/aio/aio_01_dev1.txt data/aio/aio_01_dev2.txt \
 --output_file ~/work/quiz-datasets/datasets/no_passages/aio_01_dev.jsonl.gz
 # Total output questions: 1992
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_test_lb.txt data/aio_jaqket/aio_01_test_lc.txt \
+--input_files data/aio/aio_01_test_lb.txt data/aio/aio_01_test_lc.txt \
 --output_file ~/work/quiz-datasets/datasets/no_passages/aio_01_test.jsonl.gz
 # Total output questions: 2000
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_unused.txt \
+--input_files data/aio/aio_01_unused.txt \
 --output_file ~/work/quiz-datasets/datasets/no_passages/aio_01_unused.jsonl.gz
 # Total output questions: 608
 ```
@@ -107,7 +107,7 @@ $ python make_dataset.py \
 # Total output questions: 17735
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_dev1.txt data/aio_jaqket/aio_01_dev2.txt \
+--input_files data/aio/aio_01_dev1.txt data/aio/aio_01_dev2.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-small/aio_01_dev.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -118,7 +118,7 @@ $ python make_dataset.py \
 # Total output questions: 1992
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_test_lb.txt data/aio_jaqket/aio_01_test_lc.txt \
+--input_files data/aio/aio_01_test_lb.txt data/aio/aio_01_test_lc.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-small/aio_01_test.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -129,7 +129,7 @@ $ python make_dataset.py \
 # Total output questions: 2000
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_unused.txt \
+--input_files data/aio/aio_01_unused.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-small/aio_01_unused.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -157,7 +157,7 @@ $ python make_dataset.py \
 # Total output questions: 17735
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_dev1.txt data/aio_jaqket/aio_01_dev2.txt \
+--input_files data/aio/aio_01_dev1.txt data/aio/aio_01_dev2.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-medium/aio_01_dev.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -168,7 +168,7 @@ $ python make_dataset.py \
 # Total output questions: 1992
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_test_lb.txt data/aio_jaqket/aio_01_test_lc.txt \
+--input_files data/aio/aio_01_test_lb.txt data/aio/aio_01_test_lc.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-medium/aio_01_test.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -179,7 +179,7 @@ $ python make_dataset.py \
 # Total output questions: 2000
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_unused.txt \
+--input_files data/aio/aio_01_unused.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-medium/aio_01_unused.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -207,7 +207,7 @@ $ python make_dataset.py \
 # Total output questions: 17735
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_dev1.txt data/aio_jaqket/aio_01_dev2.txt \
+--input_files data/aio/aio_01_dev1.txt data/aio/aio_01_dev2.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-large/aio_01_dev.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -218,7 +218,7 @@ $ python make_dataset.py \
 # Total output questions: 1992
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_test_lb.txt data/aio_jaqket/aio_01_test_lc.txt \
+--input_files data/aio/aio_01_test_lb.txt data/aio/aio_01_test_lc.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-large/aio_01_test.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -229,7 +229,7 @@ $ python make_dataset.py \
 # Total output questions: 2000
 
 $ python make_dataset.py \
---input_files data/aio_jaqket/aio_01_unused.txt \
+--input_files data/aio/aio_01_unused.txt \
 --output_file ~/work/quiz-datasets/datasets/jawiki-20220404-c400-large/aio_01_unused.jsonl.gz \
 --num_passages_per_question 100 \
 --es_index_name jawiki-20220404-c400 \
@@ -392,5 +392,5 @@ $ python convert_passages_to_dpr_format.py \
 - The codes in this repository, not including the datasets themselves, are distributed under the MIT license.
 
 - `data/abc` 以下に含まれるクイズ問題の著作権は [abc/EQIDEN 実行委員会](http://abc-dive.com/questions/) に帰属します。東北大学において研究目的での再配布許諾を得ています。
-- `data/aio_jaqket` 以下に含まれるクイズ問題は [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) ライセンスの下に提供されています。これらのクイズ問題は [株式会社キュービック](http://www.qbik.co.jp/) および [クイズ法人カプリティオ](http://capriccio.tokyo/) に依頼し作成したものです。
+- `data/aio` 以下に含まれるクイズ問題は [Creative Commons Attribution-ShareAlike 4.0 International](https://creativecommons.org/licenses/by-sa/4.0/) ライセンスの下に提供されています。これらのクイズ問題は [株式会社キュービック](http://www.qbik.co.jp/) および [クイズ法人カプリティオ](http://capriccio.tokyo/) に依頼し作成したものです。
 - 読解データセットにパッセージとして付与されている Wikipedia のコンテンツは、[Attribution-ShareAlike 3.0 Unported](https://creativecommons.org/licenses/by-sa/3.0/) ライセンスおよび [GFDL](https://www.gnu.org/copyleft/fdl.html) ライセンスの下に配布されているものです。

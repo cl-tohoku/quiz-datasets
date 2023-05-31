@@ -4,6 +4,8 @@ This repository maintains question answering (QA) datasets created from Japanese
 
 The datasets are used in baseline systems for [the AI王 question answering competition](https://sites.google.com/view/project-aio/home), such as [cl-tohoku/AIO3_BPR_baseline](https://github.com/cl-tohoku/AIO3_BPR_baseline).
 
+Some of the datasets are also available at [Hugging Face Hub](https://huggingface.co/datasets/cl-tohoku/quiz-datasets).
+
 ## Data source
 
 ### Questions
